@@ -1,0 +1,73 @@
+* {
+    margin: 0;                    /* Elimina márgenes predeterminados de todos los elementos */
+    padding: 0;                   /* Elimina rellenos predeterminados de todos los elementos */
+    box-sizing: border-box;       /* Incluye el padding y borde en el cálculo del tamaño total de los elementos */
+}
+body, html {
+    height: 100%;                                                 /* El cuerpo y el HTML ocupan el 100% de la altura de la pantalla */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente utilizada para el texto */
+    display: flex;                                                /* Se usa flexbox para la alineación */
+    justify-content: center;                                      /* Centra el contenido horizontalmente */
+    align-items: center;                                          /* Centra el contenido verticalmente */
+    background-color: #e0f7fa;                                  /* Fondo suave color aguamarina */
+}
+.container {
+    background-color: #ffffff;                      /* Fondo blanco para el contenedor */
+    padding: 25px;                                    /* Espacio interno alrededor del contenido */
+    border-radius: 15px;                              /* Bordes redondeados */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);    /* Sombra para darle profundidad */
+    max-width: 400px;                                 /* Ancho máximo del contenedor */
+    width: 100%;                                      /* Ancho del contenedor ocupa el 100% del espacio disponible */
+    text-align: center;                               /* Centra el texto dentro del contenedor */
+    transition: transform 0.3s ease;                  /* Transición suave para el efecto de transformación */
+}
+.container:hover {
+    transform: scale(1.05);     /* Aumenta ligeramente el tamaño del contenedor cuando se pasa el ratón */
+}
+h1 {
+    color: #00796b;           /* Color verde del título */
+    margin-bottom: 25px;        /* Espacio debajo del título */
+    font-size: 24px;            /* Tamaño de la fuente del título */
+}
+form {
+    display: flex;              /* Se usa flexbox para organizar los elementos */
+    flex-direction: column;     /* Los elementos dentro del formulario se apilan verticalmente */
+}
+label {
+    margin: 10px 0 5px;         /* Márgenes superior e inferior para los labels */
+    color: #00796b;           /* Color del texto del label */
+    font-weight: bold;          /* Texto en negrita para los labels */
+}
+input[type="number"] {
+    padding: 12px;                      /* Espacio interno en el campo de entrada */
+    margin-bottom: 15px;                /* Espacio inferior después del campo de entrada */
+    border-radius: 10px;                /* Bordes redondeados para el campo de entrada */
+    border: 1px solid #b2dfdb;        /* Borde de color aguamarina suave */
+    font-size: 16px;                    /* Tamaño de la fuente en los campos de entrada */
+    outline: none;                      /* Elimina el borde de enfoque predeterminado */
+    transition: border-color 0.3s ease; /* Transición suave para el cambio de color del borde */
+}
+input[type="number"]:focus {
+    border-color: #00796b;            /* Cambia el color del borde al verde cuando el campo está enfocado */
+}
+button {
+    padding: 12px;                          /* Espacio interno en el botón */
+    background-color: #009688;            /* Color de fondo del botón (verde vibrante) */
+    color: white;                         /* Color del texto del botón (blanco) */
+    border: none;                           /* Sin borde en el botón */
+    border-radius: 10px;                    /* Bordes redondeados para el botón */
+    cursor: pointer;                        /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+    font-size: 16px;                        /* Tamaño de la fuente en el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color del botón */
+}
+button:hover {
+    background-color: #00796b;            /* Color de fondo más oscuro cuando se pasa el ratón sobre el botón */
+}
+#results {
+    margin-top: 25px;                       /* Espacio superior para separar los resultados del formulario */
+}
+p {
+    font-size: 18px;                        /* Tamaño de la fuente para los párrafos de resultados */
+    color: #004d40;                       /* Color verde oscuro para el texto de los resultados */
+    margin-bottom: 10px;                    /* Espacio inferior para separar los párrafos de resultados */
+}

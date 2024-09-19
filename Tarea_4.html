@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Codificación UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hacer la página responsiva -->
+    <title>Operaciones con Bucle</title>
+    <link rel="stylesheet" href="Tarea_4_styles.css"> <!-- Vincula el archivo CSS externo -->
+</head>
+<body>
+    <div class="container"> <!-- Contenedor principal -->
+        <h1>Operaciones con 2 Números</h1> <!-- Título de la página -->
+        <form id="operationForm"> <!-- Formulario para ingresar los números -->
+            <label for="num1">Número 1:</label>
+            <input type="number" id="num1" required> <!-- Campo para número 1 -->
+            <label for="num2">Número 2:</label>
+            <input type="number" id="num2" required> <!-- Campo para número 2 -->
+            <button type="button" onclick="performOperations()">Realizar Operaciones</button> <!-- Botón para ejecutar las operaciones -->
+        </form>
+        <div id="results"></div> <!-- Div para mostrar resultados -->
+    </div>
+    <script>
+        function performOperations() {
+            let num1 = parseFloat(document.getElementById("num1").value); /* Obtener valor del número 1 */
+            let num2 = parseFloat(document.getElementById("num2").value); /* Obtener valor del número 2 */
+            let resultsDiv = document.getElementById("results"); /* Div donde se mostrarán los resultados */
+            resultsDiv.innerHTML = ''; /* Limpiar resultados previos */
+            if (isNaN(num1) || isNaN(num2)) { /* Validar si los valores son números */
+                resultsDiv.innerHTML = "<p>Por favor, ingresa números válidos.</p>";
+                return;
+            }
+            for (let i = 1; i <= 5; i++) { /* Bucle para realizar las 5 operaciones */
+                let result;
+                let operation;
+                if (i === 1) { /* Suma */
+                    result = num1 + num2;
+                    operation = "Suma";
+                } else if (i === 2) { /* Resta */
+                    result = num1 - num2;
+                    operation = "Resta";
+                } else if (i === 3) { /* Multiplicación */
+                    result = num1 * num2;
+                    operation = "Multiplicación";
+                } else if (i === 4) { /* División */
+                    result = num2 === 0 ? "No se puede dividir por 0" : num1 / num2;
+                    operation = "División";
+                } else if (i === 5) { /* Módulo */
+                    result = num2 === 0 ? "No se puede calcular el módulo con 0" : num1 % num2;
+                    operation = "Módulo";
+                }
+                resultsDiv.innerHTML += `<p>Iteración ${i}: ${operation} de ${num1} y ${num2} = ${result}</p>`; /* Mostrar el resultado de la operación*/
+            }
+        }
+    </script>
+</body>
+</html>
