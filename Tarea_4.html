@@ -18,36 +18,49 @@
         </form>
         <div id="results"></div> <!-- Div para mostrar resultados -->
     </div>
+
     <script>
         function performOperations() {
             let num1 = parseFloat(document.getElementById("num1").value); /* Obtener valor del número 1 */
             let num2 = parseFloat(document.getElementById("num2").value); /* Obtener valor del número 2 */
             let resultsDiv = document.getElementById("results"); /* Div donde se mostrarán los resultados */
+            
             resultsDiv.innerHTML = ''; /* Limpiar resultados previos */
+            
             if (isNaN(num1) || isNaN(num2)) { /* Validar si los valores son números */
                 resultsDiv.innerHTML = "<p>Por favor, ingresa números válidos.</p>";
                 return;
             }
+
             for (let i = 1; i <= 5; i++) { /* Bucle para realizar las 5 operaciones */
                 let result;
                 let operation;
-                if (i === 1) { /* Suma */
-                    result = num1 + num2;
-                    operation = "Suma";
-                } else if (i === 2) { /* Resta */
-                    result = num1 - num2;
-                    operation = "Resta";
-                } else if (i === 3) { /* Multiplicación */
-                    result = num1 * num2;
-                    operation = "Multiplicación";
-                } else if (i === 4) { /* División */
-                    result = num2 === 0 ? "No se puede dividir por 0" : num1 / num2;
-                    operation = "División";
-                } else if (i === 5) { /* Residuo de division */
-                    result = num2 === 0 ? "No se puede calcular con 0" : num1 % num2;
-                    operation = "Residuo de division";
+
+                switch (i) {
+                    case 1: /* Suma */
+                        result = num1 + num2;
+                        operation = "Suma";
+                        break;
+                    case 2: /* Resta */
+                        result = num1 - num2;
+                        operation = "Resta";
+                        break;
+                    case 3: /* Multiplicación */
+                        result = num1 * num2;
+                        operation = "Multiplicación";
+                        break;
+                    case 4: /* División */
+                        result = num2 === 0 ? "No se puede dividir por 0" : num1 / num2;
+                        operation = "División";
+                        break;
+                    case 5: /* Residuo de división */
+                        result = num2 === 0 ? "No se puede calcular con 0" : num1 % num2;
+                        operation = "Residuo";
+                        break;
                 }
-                resultsDiv.innerHTML += `<p>Iteración ${i}: ${operation} de ${num1} y ${num2} = ${result}</p>`; /* Mostrar el resultado de la operación*/
+
+                /* Mostrar el resultado de la operación */
+                resultsDiv.innerHTML += `<p>Operacion ${i}: ${operation} de ${num1} y ${num2} = ${result}</p>`;
             }
         }
     </script>
